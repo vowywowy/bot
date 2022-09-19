@@ -14,4 +14,4 @@ jobs:
       - run: npm ci
       - run: node .
         env:
-          TOKEN: ${{ secrets.DISCORD_TOKEN}}
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN}}
