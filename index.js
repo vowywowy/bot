@@ -27,7 +27,7 @@ bot.on("ready", () => {
     bot.channels.cache.get(DUDE_PALS_GENERAL).send({
         embeds: [SPECIAL_EVENTS[`${new Date().getDay()}`].embed],
         files: [SPECIAL_EVENTS[`${new Date().getDay()}`].attachment]
-    });
+    }).then(m => {console.log(m.id); process.exit(0)});
 });
 
 bot.login(process.env.DISCORD_TOKEN);
