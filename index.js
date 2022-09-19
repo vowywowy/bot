@@ -1,5 +1,5 @@
-const { Client, Intents, MessageAttachment } = require('discord.js');
-const bot = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const { Client, GatewayIntentBits, MessageAttachment } = require('discord.js');
+const bot = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 const DUDE_PALS_GENERAL = '753082935451582519';
 const SPECIAL_EVENTS = {
@@ -24,13 +24,10 @@ const SPECIAL_EVENTS = {
 }
 
 bot.on("ready", () => {
-    DUDE_PALS_GENERAL = bot.channels.cache.get(DUDE_PALS_GENERAL); // Channel to send notification
+    bot.channels.cache.get(DUDE_PALS_GENERAL).send({
+        embeds: [SPECIAL_EVENTS[`${new Date().getDay()}`].embed],
+        files: [SPECIAL_EVENTS[`${new Date().getDay()}`].attachment]
+    });
 });
-
-DUDE_PALS_GENERAL.send({
-    embeds: [SPECIAL_EVENTS[process.env.DAY.toLocaleUpperCase()].embed],
-    files: [new MessageAttachment(SPECIAL_EVENTS[f`${new Date().getDay}`].attachment)]
-});
-
 
 bot.login(process.env.DISCORD_TOKEN);
