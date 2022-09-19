@@ -33,4 +33,4 @@ DUDE_PALS_GENERAL.send({
 });
 
 
-bot.login(process.env.CLIENT_TOKEN);
+bot.login(process.env.DISCORD_TOKEN);
