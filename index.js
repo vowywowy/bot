@@ -8,6 +8,9 @@ const SPECIAL_EVENTS = {
     },
     '3': {
         attachment: 'https://i.kym-cdn.com/entries/icons/original/000/020/016/wednesdaymydudeswide.jpg'
+    },
+    '5': {
+        attachment:  'https://pbs.twimg.com/ext_tw_video_thumb/1425640971744673798/pu/img/mpsR3usrURzxXAn7.jpg:large'
     }
 }
 
